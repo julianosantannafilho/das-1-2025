@@ -18,3 +18,11 @@ Padrões arquiteturais propõem uma organização de mais alto nível para siste
 - Entidade: Classe  que representa informação gravada e persistida que serão utilizadas no banco.
 - Microsserviços: Parte do software que faz uma tarefa muito específica, sem interface gráfica, porém com o uso de uma API Rest. Um microsserviço DEVE ter camadas, provando mais uma vez que diferentes arquiteturas podem ser utilizadas em conjunto.
 - Monolito: Oposto de microsserviço. Tudo no mesmo lugar, repositório único de código; Uso de uma única tecnologia padrão; Compilado, testado e gera um único pacote; Deploy como um único sistema; Executado como um único processo no OS; Único banco de dados/repositório. 
+
+## Aula 05/03/2025
+Padrão vs Estilo arquitetural: O padrão foca em solução para problemas específicos da arquitetura(Ex.: MVC); estilos arquiteturais propõem uma organização do código / projeto.
+- Big ball of Mud: Ausência de padrões de arquitetura de software.
+- Arquitetura de camadas: 3 camadas; Interface gráfica, lógica e banco de dados. Divisão de responsabilidade, performance, segurança, manutenibilidade.
+    - Camada de apresentação: requisitos próprios
+    - Camada de Lógica de negócio/aplicação: Local central para definição e atualização das regras, escalar o backend para suportar as requisições.
+    - Camada de persistência/banco de dados: BD relacional - consolidada, resolve problemas de concorrência, permite compartilhamento de dados
