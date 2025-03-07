@@ -26,3 +26,8 @@ Padrão vs Estilo arquitetural: O padrão foca em solução para problemas espec
     - Camada de apresentação: requisitos próprios
     - Camada de Lógica de negócio/aplicação: Local central para definição e atualização das regras, escalar o backend para suportar as requisições.
     - Camada de persistência/banco de dados: BD relacional - consolidada, resolve problemas de concorrência, permite compartilhamento de dados
+## Aula 06/03/2025
+ Who Needs an Architect? https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf
+- O que é arquitetura? Arquitetura é um conceito social onde desenvolvedores experientes na área, ou com o sistema, discutem sobre o entendimento conjunto para todos os desenvolvedores sobre o projeto. Esse entendimento inclui como o sistema é dividido em componentes e como esses componentes se comunicam através de interfaces.
+- Qual o comportamento do arquiteto da "Matrix"? O arquiteto Matrix é aquele que tenta centralizar o entendimento do sistema nele mesmo. Tenta tomar decisões importantes cedo a fim de manter uma lista de regras que os outros colegas devem seguir.
+- Qual o comportamento do arquiteto ideal? O arquiteto ideal está sempre monitorando o sistema e busca corrigir erros antes deles acontecerem. O arquiteto ideal deve ser um desenvolvedor experiente que consiga colaborar com as demais pessoas envolvidas no projeto e consiga explicar o sistema e as suas consequencias para pessoas envolvidas com o código ou não. O arquiteto ideal serve mais como um guia de trilha, conhecendo os caminhos como a palma de sua mão e quando algo dá errado ele também está disponível.
