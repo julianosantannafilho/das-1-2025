@@ -1,4 +1,4 @@
-# Design e Aarquitetura de Software
+# Design e Arquitetura de Software
 
 ## Aula 26/02/2025
 Livro Eng de Software Moderna - Cap 7 https://engsoftmoderna.info/cap7.html
