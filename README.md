@@ -33,10 +33,18 @@ Padrão vs Estilo arquitetural: O padrão foca em solução para problemas espec
 - Qual o comportamento do arquiteto ideal? O arquiteto ideal está sempre monitorando o sistema e busca corrigir erros antes deles acontecerem. O arquiteto ideal deve ser um desenvolvedor experiente que consiga colaborar com as demais pessoas envolvidas no projeto e consiga explicar o sistema e as suas consequencias para pessoas envolvidas com o código ou não. O arquiteto ideal serve mais como um guia de trilha, conhecendo os caminhos como a palma de sua mão e quando algo dá errado ele também está disponível.
 ## Aula 03/04/2025
 Filas (qeues)
--FIFO
--Entrega pra um só.
--Remover acoplamento temporal de componentes da aplicação
--Permite acumular pedidos em caso de queda de aplicação
--Producer: Gerar mensagens(Publisher).
--Consumer: (Subscriber)
-
+- FIFO
+- Entrega pra um só.
+- Remover acoplamento temporal de componentes da aplicação
+- Permite acumular pedidos em caso de queda de aplicação
+- Producer: Gerar mensagens(Publisher).
+- Consumer: (Subscriber)
+## Aula 09/04/2025
+Fundamentos da Arquitetura de Software cap. 4
+Backup
+- Mais barato
+- Demora mais para restaurar 
+Réplica
+- Recuperação mais rápida
+- Custo maior
+- Pode desincronziar
