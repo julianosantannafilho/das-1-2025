@@ -48,3 +48,69 @@ Réplica
 - Recuperação mais rápida
 - Custo maior
 - Pode desincronziar
+## Resumo cap. 4 do livro Fundamentos da arquitetura de software: uma abordagem de engenharia
+Características da arquitetura
+- Especifica uma consideração de design fora do domínio
+    - Critérios operacionais e de design para o sucesso, como implementar os requisitos e por que certas escolhas foram feitas.
+- Influencia algum aspecto estrutural de design
+    -  Características de um sistema influenciam diretamente o design estrutural da arquitetura. A principal questão é se a característica exige um tratamento estrutural especial para garantir seu sucesso.
+- É essencial ou importante para o sucesso da aplicação
+    - O suporte de cada característica da arquitetura adiciona complexidade ao design. Assim, um trabalho crítico dos arquitetos é escolher menos características da arquitetura, ao invés do máximo possíve
+- Características Operacionais
+    - Envolvem desempenho, escalabilidade, elasticidade, disponibilidade e confiabilidade.
+- Características Estruturais
+    - Estrutura e qualidade do código, boa modularidade, acoplamento controlado entre os componentes, código legível.
+- Características Transversais
+    - Características que estão fora ou desafiam a classificação, formando restrições de design e considerações. Ex.: Legalidade
+Trade-offs
+- É necessário entender que qualquer decisão arquitetural deve levar em consideração o "menos pior", pois raramente terá uma característica que beneficia a aplicação como um todo e não afeta negativamente outra parte da aplicação. Ex.: Aumentar a segurança da aplicação tende a ter um impacto negativo no desempenho.
+## Resumo do cap. 9 do livro Fundamentos da arquitetura de software: uma abordagem de engenharia
+Padrões Fundamentais
+- A Grande Bola de Lama
+    - Ausência de arquitetura
+    - Ocorre por falta de visão ou crescimento desenfreado
+    - Dificulta qualquer alteração no código
+- Arquitetura Unitária
+    - Modelo mais antigo
+    - Computador e um software que só roda nele como um todo
+    - Comum em sitemas embarcados ou altamente restritos
+- Cliente/Servidor
+    - Dektop + servidor de banco de dados
+        - Lógica de apresentação no desktop, enquanto as ações mais intensas computacionalmente (em volume e complexidade) ocorria nos serviços de banco de dados mais robustos.
+    - Navegador + servidor de banco de dados
+        - Navegador web conectado ao servidor web (que por sua vez conectava um servidor de banco de dados). A separação das responsabilidades lembrava a variante de desktop, mas com clientes ainda mais leves, como navegadores, permitindo uma distribuição mais ampla tanto dentro quanto fora dos firewalls. 
+    - Três camadas
+        - Interface gráfica
+        - Lógica
+        - Banco de dados
+- Monolito
+    - Uma unidade de implementação de todo o código
+    - Camadas
+    - Pipelines
+    - Microkernel
+- Distribuído
+    - Várias unidades de implementação conectadas por protocolos de acesso remoto
+    - Baseada em serviços
+    - Orientada a eventos
+    - Baseada em espaços
+    - Orientada a serviços
+    - Microsserviços
+Falácias das arquiteturas distribuídas
+- 1: A rede é confiável
+    - Um serviço pode não conseguir acessar outro devido a um problema na rede
+- 2: A latência é zero
+    - Um protocolo de acesso remoto (REST, mensageria ou RPC) sempre será mais lento que um acesso local.
+- 3: A largura da banda é infinita
+    - A solicitação entre dois serviços pode chegar a níves não aceitável de banda larga utilizada se não forem tomadas as devidas precauções
+- 4: A rede é segura
+    - Cada endpoint para cada unidade de implementação distribuída deve ser assegurado para que solicitações desconhecidas ou ruins não cheguem nesse serviço. A área para ameaças e ataques aumenta em magnitude ao passar de uma arquitetura monolítica para uma distribuída. Ter que assegurar cada endpoint, mesmo na comunicação entre os serviços, é outro motivo para o desempenho ser mais lento nas arquiteturas síncronas e altamente distribuídas, como os microsserviços ou a arquitetura baseada em serviços.
+- 5: A topologia nunca muda
+    - Refere à topologia da rede em geral, inclusive todos os roteadores, hubs, switches, firewalls, redes e aparelhos usados na rede em geral.
+- 6: Existe apenas um admin
+    - Existem dezenas de administradores de rede em uma grande empresa típica.
+    - Essa falácia aponta para a complexidade da arquitetura distribuída e a quantidade de coordenação que deve ocorrer para tudo funcionar corretamente. As aplicações monolíticas não requerem esse nível de comunicação e colaboração devido às características unitárias da implementação desses estilos de arquitetura.
+- 7: O custo do transporte é zero
+    - As arquiteturas distribuídas custam muito mais do que as monolíticas, basicamente devido às maiores necessidades de hardware, servidores, gateways, firewalls, novas sub-redes e proxies adicionais, entre outros.
+- 8: A rede é homogênea
+    - A maioria das empresas tem vários fornecedores de hardware da rede em sua infraestrutura
+    - Nem todos os fornecedores de hardware heterogêneos funcionam bem juntos
