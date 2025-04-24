@@ -21,7 +21,7 @@ import br.univille.ativchat.view.Form;
 public class BrokerMensagemServiceImpl implements BrokerMensagemService {
     String topicName = "topic-chat";
     String serviceBus = "sb-das12025-test-brazilsouth.servicebus.windows.net";
-    String subscription = "subscription-" +  System.getenv("USERNAME");
+    String subscription = "subscription-";
 
     DefaultAzureCredential credential =
         new DefaultAzureCredentialBuilder()
@@ -37,7 +37,6 @@ public class BrokerMensagemServiceImpl implements BrokerMensagemService {
         try {
             adminClient.createSubscription(topicName, subscription); 
         } catch (Exception e) {
-            // TODO: handle exception
         }
 
         
@@ -82,7 +81,7 @@ public class BrokerMensagemServiceImpl implements BrokerMensagemService {
         }
         mensagens.stream().forEach(m -> System.out.println(m));
     }
-    
+
 }
 
 

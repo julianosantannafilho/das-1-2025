@@ -28,6 +28,9 @@ public class Form extends JFrame{
     public void setMensagem(String msg){
         txtNovaMsg.setText(txtNovaMsg.getText() + "\n" + msg);
     }
+    public void sendMessage(String newText){
+        txtChat.append(newText + "\n");
+    }
     
     public Form() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,6 +42,7 @@ public class Form extends JFrame{
         criaJpnSul();
         setVisible(true);
     }
+    
 
     private void solicitarNome() {
         this.nome = javax.swing.JOptionPane.showInputDialog("Digite seu nome:");
