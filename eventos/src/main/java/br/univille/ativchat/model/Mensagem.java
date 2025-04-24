@@ -9,4 +9,5 @@ import lombok.Setter;
 public class Mensagem{
     private String Nome;
     private String Texto;
+
 } 

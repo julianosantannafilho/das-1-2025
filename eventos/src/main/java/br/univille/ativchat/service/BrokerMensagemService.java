@@ -6,5 +6,6 @@ import br.univille.ativchat.model.Mensagem;
 
 public interface BrokerMensagemService {
     void enviarMensagem(Mensagem mensagem);
-    void buscarMensagens(List<Mensagem> mensagens);
+    public List<Mensagem> buscarMensagens(List<Mensagem> mensagens);
+    void evict();
 }

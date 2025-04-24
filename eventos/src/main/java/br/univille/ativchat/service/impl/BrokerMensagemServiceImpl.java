@@ -52,7 +52,7 @@ public class BrokerMensagemServiceImpl implements BrokerMensagemService {
     }
 
     @Override
-    public void buscarMensagens(List<Mensagem> mensagens) {
+    public  List<Mensagem> buscarMensagens(List<Mensagem> mensagens) {
         ServiceBusProcessorClient processorClient = new ServiceBusClientBuilder()
             .fullyQualifiedNamespace(serviceBus)
             .credential(credential)
@@ -80,6 +80,7 @@ public class BrokerMensagemServiceImpl implements BrokerMensagemService {
             processorClient.close();
         }
         mensagens.stream().forEach(m -> System.out.println(m));
+        return mensagens;
     }
 
 }
