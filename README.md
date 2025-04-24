@@ -78,7 +78,7 @@ Padrões Fundamentais
     - Dektop + servidor de banco de dados
         - Lógica de apresentação no desktop, enquanto as ações mais intensas computacionalmente (em volume e complexidade) ocorria nos serviços de banco de dados mais robustos.
     - Navegador + servidor de banco de dados
-        - Navegador web conectado ao servidor web (que por sua vez conectava um servidor de banco de dados). A separação das responsabilidades lembrava a variante de desktop, mas com clientes ainda mais leves, como navegadores, permitindo uma distribuição mais ampla tanto dentro quanto fora dos firewalls. 
+        - Navegador web conectado ao servidor web (que por sua vez conectava um servidor de banco de dados). A separação das responsabilidades lembra a variante de desktop, mas com clientes ainda mais leves, como navegadores, permitindo uma distribuição mais ampla tanto dentro quanto fora dos firewalls. 
     - Três camadas
         - Interface gráfica
         - Lógica
@@ -114,3 +114,5 @@ Falácias das arquiteturas distribuídas
 - 8: A rede é homogênea
     - A maioria das empresas tem vários fornecedores de hardware da rede em sua infraestrutura
     - Nem todos os fornecedores de hardware heterogêneos funcionam bem juntos
+## Aula 23/04/2025
+- Débito técnico: Custo do comprometimento de um desenvolvimento rápido e mal escrito.
