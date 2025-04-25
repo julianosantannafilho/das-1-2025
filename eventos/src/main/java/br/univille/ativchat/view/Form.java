@@ -28,22 +28,22 @@ public class Form extends JFrame{
     public void setMensagem(String msg){
         txtNovaMsg.setText(txtNovaMsg.getText() + "\n" + msg);
     }
-    public void sendMensagem(String mensagem){
-        txtChat.append(mensagem + "\n");
-    }
     
     public Form() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("CHAT");
         setSize(500,400);
         solicitarNome();
-
+        
         criaJpnCentro();
         criaJpnSul();
         setVisible(true);
     }
     
-
+    public void sendMensagem(String mensagem){
+        txtChat.append(mensagem + "\n");
+    }
+    
     private void solicitarNome() {
         this.nome = javax.swing.JOptionPane.showInputDialog("Digite seu nome:");
         if (nome != null && !nome.trim().isEmpty()) {

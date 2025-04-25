@@ -10,20 +10,29 @@ import br.univille.ativchat.config.Subscription;
 public class BrokerMensagemServiceImpl implements BrokerMensagemService {
     private static final String topicName = "topic-chat";
     private static final String serviceBus = "sb-das12025-test-brazilsouth.servicebus.windows.net";
-    private static final String subscription = "subscription-" + "juliano";
+    private static final String subscription = "subscription-juliano";
 
     private final Publisher publisher = new Publisher(topicName, serviceBus);
     private final Subscriber subscriber = new Subscriber(serviceBus, topicName, subscription);
     private final Subscription criadorSubscription = new Subscription(serviceBus, topicName, subscription); 
+    private boolean isSubscriptionCreated = false;
        
     @Override
     public void enviarMensagem(Mensagem mensagem) { 
-        System.out.println(mensagem.getNome() + " : " + mensagem.getTexto());
-        publisher.enviarMensagem(mensagem);
-
+        System.out.println("Enviando mensagem: " + mensagem.toString());
+        try {
+            if (!isSubscriptionCreated) {
+                criadorSubscription.criarSubscription();
+                isSubscriptionCreated = true;
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao criar subscription: " + e.getMessage());
+        } finally {
+            publisher.enviarMensagem(mensagem);
+        }
     }
-
     
+    @Override
     public void buscarMensagens(Form form) {
         System.out.println("Aguardando mensagens ...");
         subscriber.receberMensagens(mensagem -> form.sendMensagem(mensagem.toString()));

@@ -29,7 +29,7 @@ public class Publisher {
                 .sender()
                 .topicName(topicName)
                 .buildClient();
-        senderClient.sendMessage(new ServiceBusMessage(mensagem.toString()));
+        senderClient.sendMessage(new ServiceBusMessage(mensagem.getNome() + ": " +mensagem.getTexto()));
     }
 
 }

@@ -14,7 +14,7 @@ public class Subscription {
 
     private String serviceBus;
     private String topicName;
-    private String subscription;
+    private String subscriptionNome;
 
         public void criarSubscription(){
 
@@ -24,6 +24,6 @@ public class Subscription {
             .credential(serviceBus, credential)
             .buildClient();
 
-        adminClient.createSubscription(topicName, subscription);   
+        adminClient.createSubscription(topicName, subscriptionNome);   
     }
 }
