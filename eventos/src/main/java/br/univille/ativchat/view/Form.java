@@ -28,8 +28,8 @@ public class Form extends JFrame{
     public void setMensagem(String msg){
         txtNovaMsg.setText(txtNovaMsg.getText() + "\n" + msg);
     }
-    public void sendMessage(String newText){
-        txtChat.append(newText + "\n");
+    public void sendMensagem(String mensagem){
+        txtChat.append(mensagem + "\n");
     }
     
     public Form() {
