@@ -1,11 +1,11 @@
 package br.univille.ativchat.model;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class Mensagem{
     
     private String nome;

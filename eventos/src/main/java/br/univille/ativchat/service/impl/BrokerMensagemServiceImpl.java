@@ -20,18 +20,9 @@ public class BrokerMensagemServiceImpl implements BrokerMensagemService {
     @Override
     public void enviarMensagem(Mensagem mensagem) { 
         System.out.println("Enviando mensagem: " + mensagem.toString());
-        try {
-            if (!isSubscriptionCreated) {
-                criadorSubscription.criarSubscription();
-                isSubscriptionCreated = true;
-            }
-        } catch (Exception e) {
-            System.out.println("Erro ao criar subscription: " + e.getMessage());
-        } finally {
-            publisher.enviarMensagem(mensagem);
-        }
+        publisher.enviarMensagem(mensagem);      
     }
-    
+
     @Override
     public void buscarMensagens(Form form) {
         System.out.println("Aguardando mensagens ...");

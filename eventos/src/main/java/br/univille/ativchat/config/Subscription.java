@@ -12,16 +12,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Subscription {
 
-    private String serviceBus;
+    private String fqnds;
     private String topicName;
     private String subscriptionNome;
 
         public void criarSubscription(){
-
         DefaultAzureCredential credential = new DefaultAzureCredentialBuilder().build();
 
         ServiceBusAdministrationClient adminClient = new ServiceBusAdministrationClientBuilder()
-            .credential(serviceBus, credential)
+            .credential(fqnds, credential)
             .buildClient();
 
         adminClient.createSubscription(topicName, subscriptionNome);   

@@ -29,6 +29,10 @@ public class Form extends JFrame{
         txtNovaMsg.setText(txtNovaMsg.getText() + "\n" + msg);
     }
     
+    public void sendMensagem(String mensagem){
+        txtChat.append(mensagem + "\n");
+    }
+    
     public Form() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("CHAT");
@@ -38,10 +42,6 @@ public class Form extends JFrame{
         criaJpnCentro();
         criaJpnSul();
         setVisible(true);
-    }
-    
-    public void sendMensagem(String mensagem){
-        txtChat.append(mensagem + "\n");
     }
     
     private void solicitarNome() {

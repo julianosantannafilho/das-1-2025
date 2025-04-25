@@ -23,13 +23,13 @@ public class Publisher {
         DefaultAzureCredential credential = new DefaultAzureCredentialBuilder().build();
 
         ServiceBusSenderClient senderClient = new ServiceBusClientBuilder()
-                .fullyQualifiedNamespace(serviceBus)
-                .credential(credential)
-                .transportType(AmqpTransportType.AMQP_WEB_SOCKETS)
-                .sender()
-                .topicName(topicName)
-                .buildClient();
-        senderClient.sendMessage(new ServiceBusMessage(mensagem.getNome() + ": " +mensagem.getTexto()));
+            .fullyQualifiedNamespace(serviceBus)
+            .credential(credential)
+            .transportType(AmqpTransportType.AMQP_WEB_SOCKETS)
+            .sender()
+            .topicName(topicName)
+            .buildClient();
+        senderClient.sendMessage(new ServiceBusMessage(mensagem.toString()));
     }
 
 }
