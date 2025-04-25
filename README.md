@@ -116,3 +116,9 @@ Falácias das arquiteturas distribuídas
     - Nem todos os fornecedores de hardware heterogêneos funcionam bem juntos
 ## Aula 23/04/2025
 - Débito técnico: Custo do comprometimento de um desenvolvimento rápido e mal escrito.
+## Aula 24/04//2025
+Estilo de Arquitetura em Camadas
+- Lei de Conway: A estrutura do software tende a remeter a organização real da empresa
+- Separação de responsabilidades em diferentes camadas de software
+- Ideal: cada camada somente se comunicar com a adjacente; Apresentação -> Comercial -> Persistência -> Banco de Dados
+- Arquitetura comum e familiar. A medida de o software cresce, ele tende a quebrar a regra de isolação de responsabilidade, impactando negativamente o software.
