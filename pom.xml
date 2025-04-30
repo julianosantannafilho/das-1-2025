@@ -8,10 +8,9 @@
     <artifactId>MultiProjectDAS20251</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <dependencies>
-        <dependency>
-            eventos
-        </dependency>
-    </dependencies>
+
+    <modules>
+        <module>eventos</module>
+    </modules>
 
 </project>
