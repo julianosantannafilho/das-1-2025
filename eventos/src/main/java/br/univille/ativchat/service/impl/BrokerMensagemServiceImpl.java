@@ -12,14 +12,18 @@ public class BrokerMensagemServiceImpl implements BrokerMensagemService {
     private static final String serviceBus = "sb-das12025-test-brazilsouth.servicebus.windows.net";
     private static final String subscription = "subscription-juliano";
 
+    private final Subscription criadorSubscription = new Subscription(serviceBus, topicName, subscription);
     private final Publisher publisher = new Publisher(topicName, serviceBus);
     private final Subscriber subscriber = new Subscriber(serviceBus, topicName, subscription);
-    private final Subscription criadorSubscription = new Subscription(serviceBus, topicName, subscription); 
-    private boolean isSubscriptionCreated = false;
-       
+
     @Override
     public void enviarMensagem(Mensagem mensagem) { 
         System.out.println("Enviando mensagem: " + mensagem.toString());
+        try {
+            criadorSubscription.criarSubscription();
+        }catch (RuntimeException e){
+            System.out.println(e.toString());
+        }
         publisher.enviarMensagem(mensagem);      
     }
 
