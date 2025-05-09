@@ -11,6 +11,8 @@
 
     <modules>
         <module>eventos</module>
+        <module>pipeline</module>
     </modules>
+    
 
 </project>

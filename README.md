@@ -122,3 +122,5 @@ Estilo de Arquitetura em Camadas
 - Separação de responsabilidades em diferentes camadas de software
 - Ideal: cada camada somente se comunicar com a adjacente; Apresentação -> Comercial -> Persistência -> Banco de Dados
 - Arquitetura comum e familiar. A medida de o software cresce, ele tende a quebrar a regra de isolação de responsabilidade, impactando negativamente o software.
+## Aula 08/05/2025
+Implementação do cliente com Kafka
