@@ -124,3 +124,16 @@ Estilo de Arquitetura em Camadas
 - Arquitetura comum e familiar. A medida de o software cresce, ele tende a quebrar a regra de isolação de responsabilidade, impactando negativamente o software.
 ## Aula 08/05/2025
 Implementação do cliente com Kafka
+## Aula 15/05/2025
+Arquitetura em Microkernel
+- Dividida em duas partes: Sistema Central e Componentes de plug-in
+- Sistema Central
+    - Fornece a extensão, adaptação e isolamento dos recursos da aplicação e lógica de processamento
+    - funcionalidade mínima requerida para rodar o sistema
+    - fluxo geral de processamento da aplicação com pouco, ou nenhum, processamento personalizado
+    - Localiza e chama os plugins de forma dinâmica
+    - Pode ser implementado com arquitetura em camadas ou bloco monolítico modular
+- Componentes de plug-in
+    - Independentes.
+    - A lógica do aplicativo é dividida entre eles
+    - 

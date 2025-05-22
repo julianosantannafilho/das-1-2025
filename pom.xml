@@ -9,10 +9,13 @@
     <version>1.0-SNAPSHOT</version>
 
 
-    <modules>
-        <module>eventos</module>
-        <module>pipeline</module>
-    </modules>
+    <dependencies>
+        <dependency>eventos</dependency>
+        <dependency>pipeline</dependency>
+        <dependency>microkernel-interface</dependency>
+        <dependency>microkernel-plugin</dependency>
+        <dependency>microkernel-kernel</dependency>
+    </dependencies>
     
 
 </project>
