@@ -136,4 +136,10 @@ Arquitetura em Microkernel
 - Componentes de plug-in
     - Independentes.
     - A lógica do aplicativo é dividida entre eles
-    - 
+## Resumo Estilo de Arquitetura Baseada em Serviços, Fundamentos da arquitetura de software: uma abordagem de engenharia
+- Distribuída, porém com menos custo e complexidade que as demais.
+- Utiliza de uma macroestrutura em camadas onde é separada em uma interface de usuário, serviços gerais remotos implantados separadamente e um banco de dados monolítico.
+- Os serviços costumam ser granulares, independentes e implantados separadamente. Eles costumam ser implantados como qualquer aplicação monolítica e não exigem conteinarização.
+- Os serviços são acessados remotamente a partir de uma UI usando um protocolo de acesso remoto, geralmente através de uma camada de API que consiste em um proxy ou gateway, embora outros métodos possam ser usados(REST, SOAP, RPC).
+- Usa um banco de dados compartilhado central.
+- O estilo de arquitetura baseado em serviço é um dos estilos mais flexíveis e modulares, podendo modificar onde cada camada interage com a outra. Por exemplo, é possíel ter uma UI para todos os serviços, uma para cada domínio e outra ara cada serviço. Isso também vale para as demais camadas do estilo.
