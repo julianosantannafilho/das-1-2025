@@ -136,10 +136,40 @@ Arquitetura em Microkernel
 - Componentes de plug-in
     - Independentes.
     - A lógica do aplicativo é dividida entre eles
-## Resumo Estilo de Arquitetura Baseada em Serviços, Fundamentos da arquitetura de software: uma abordagem de engenharia
-- Distribuída, porém com menos custo e complexidade que as demais.
+## Resumo do Cap. 13 - Estilo de Arquitetura Baseada em Serviços, do livro Fundamentos da arquitetura de software: uma abordagem de engenharia
+Arquitetura baseada em Serviços
+- Distribuída e com menos custo e complexidade que as demais.
 - Utiliza de uma macroestrutura em camadas onde é separada em uma interface de usuário, serviços gerais remotos implantados separadamente e um banco de dados monolítico.
 - Os serviços costumam ser granulares, independentes e implantados separadamente. Eles costumam ser implantados como qualquer aplicação monolítica e não exigem conteinarização.
 - Os serviços são acessados remotamente a partir de uma UI usando um protocolo de acesso remoto, geralmente através de uma camada de API que consiste em um proxy ou gateway, embora outros métodos possam ser usados(REST, SOAP, RPC).
 - Usa um banco de dados compartilhado central.
-- O estilo de arquitetura baseado em serviço é um dos estilos mais flexíveis e modulares, podendo modificar onde cada camada interage com a outra. Por exemplo, é possíel ter uma UI para todos os serviços, uma para cada domínio e outra ara cada serviço. Isso também vale para as demais camadas do estilo.
+- O estilo de arquitetura baseado em serviço é um dos estilos mais flexíveis e modulares, podendo modificar onde cada camada interage com a outra. Por exemplo, é possíel ter uma UI para todos os serviços, uma para cada domínio e outra para cada serviço. Isso também vale para as demais camadas do estilo.
+- Os serviços do domínio costumam usar um estilo de arquitetura de camadas que consiste em uma camada de fachada da API, uma comercial e uma de persistência. De outra forma, pode ser feita uma partição do domínio usando subdomínios semelhantes a arquitetura monolítica modular. Um serviço do domínio deve sempre ter algum tipo de fachada de acesso à API onde a UI interage para executar uma funcionalidade de negócios.
+- Na arquitetura baseada em serviços, uma alteração em uma funcionalidade do serviço exigiria testar o serviço granular inteiro.
+- Importante particionar o banco de dados para garantir eficiência.
+## Resumo do Cap. 17 - Arquitetura de Microsserviços, do livro Fundamentos da arquitetura de software: uma abordagem de engenharia
+- É esperado que cada serviço inclua todas as partes necessárias para operar de modo independente.
+- Distribuída, dando mais desacoplamento entre diferentes partes da arquitetura, entretanto podendo afetar negativamente a performance.
+- Contexto delimitado, cada serviço modela um domínio ou um fluxo de trabalho.
+- A finalidade dos limites de serviço nos microsserviços é capturar um domínio ou um fluxo de trabalho.
+- Em algumas partes do sistema o serviço será mais acoplado que os demais.
+- O ideal é que cada microsserviço seja extremamente coeso e contribua de maneira importante para com a aplicação em geral
+- Maior isolamento de dados
+- Geralmente as imagens dos microsserviços incluem uma chamada da API entre os consumidores do sistema.
+- As preocupações operacionais(Logs, Monitoramentos, Circuit Breakers, ...) podem ficar estabelecidas em um sidecar comum para cada serviço que se conectam para formar uma interafce operacional consistente em cada microsserviço, formando uma malha de serviços que permite um controle global ao acoplamento operacional.
+- A desacoplação dificulta o aspecto de UI
+- A UI pode ser dividida como monolítica onde uma interface faz chamadas para os microsserviços via API ou cada serviço fornecer seu próprio componente de UI com o front coordenando
+- A comunicação pode ser feita de maneira sícrona(REST) ou assíncrona(eventos e mensagens, Kafka, RabbitMQ)
+- Microsserviços devem poder chamar os outros, podem ser escritos em stacks diferentes e normalmente se comunicam via rede
+- Coreografia
+    - Sem coordenador central
+    - Serviços se comunicam diretamente
+    - Menor acoplamento
+    - Coordenação e tratamento de erro mais problemáticos
+- Orquestração
+    - Um serviço atua como coordenador
+    - Coordenação centralizada
+    - Aumenta o acoplamento
+- Transações cruzando serviços violam os princípios dos microsserviços e idicam erro na granularidade do design
+- Padrão Saga: A coordenação de transações é feita por uma série de etapas onde cada etapa é registrada como sucesso ou falha e, em caso de falha, as etapas anteriores são compensadas
+- Compensação pode ser dividida em dois estilos: Pendência + confirmação, onde todas as etapas ficam pendentes até o sucesso total, e operações do e undo, onde cada serviço implementa reversão explícita. O uso de compensação aumenta a complexidade e o tráfego de rede.
